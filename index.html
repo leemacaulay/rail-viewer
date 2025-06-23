@@ -8,9 +8,12 @@
 </head>
 <body>
     <div class="container">
-        <h1>Local Rail Viewer</h1>
-        <input type="text" id="search" placeholder="Search by title...">
-        <button id="randomBtn">Show Me a Random Link</button>
+        <h1>Local Rail viewer</h1>
+        <div class="search-wrapper">
+            <input type="text" id="search" placeholder="Search by title..." />
+            <button id="clearSearch" title="Clear search">x</button>
+        </div>
+        <button id="randomBtn">Show Me a Random Rail</button>
         <div id="link-list" class="link-list"></div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>

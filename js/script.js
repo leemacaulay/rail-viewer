@@ -62,3 +62,9 @@ document.getElementById('randomBtn').addEventListener('click', () => {
 
     renderLinks(randomLink.title);
 });
+
+document.getElementById('clearSearch').addEventListener('click', () => {
+  const searchInput = document.getElementById('search');
+  searchInput.value = '';
+  renderLinks(); // Reset the list
+});
