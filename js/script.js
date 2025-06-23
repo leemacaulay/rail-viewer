@@ -1,25 +1,23 @@
-const links = Array.from({ length: 40 }, (_, i) => ({
-    title: `Link ${i + 1}`,
-    url: `https://example.com/link${i + 1}`,
-    image: `images/image${(i % 5) + 1}.jpg`
-}));
-
-const linkList = document.getElementById('link-list');
+let allLinks = [];
 
 function renderLinks(filter = '') {
-    linkList.innerHTML = '';
-    links
-        .filter(link => link.title.toLowerCase().includes(filter.toLowerCase()))
-        .forEach(link => {
-            const item = document.createElement('div');
-            item.className = 'link-item';
-            item.innerHTML = `
-                <a href="${link.url}" target="_blank">
+ const list = document.getElementById('link-list');
+ list.innerHTML = '';
+
+ allLinks
+    .filter(link => link.title.toLowerCase().includes(filter.toLowerCase()))
+    .forEach(link => {
+        const item = document.createElement('div');
+        item.className = 'link-item';
+        item.innerHTML = `
+            <a href="${link.url}" target="_blank">
+              <div class="img-wrapper">
                     <img src="${link.image}" alt="${link.title}">
+              </div>
                     <div class="title">${link.title}</div>
                 </a>
             `;
-            linkList.appendChild(item);
+    list.appendChild(item);
         });
 }
 
@@ -28,3 +26,14 @@ document.getElementById('search').addEventListener('input', (e) => {
 });
 
 renderLinks();
+
+// Load CSV from a static file
+Papa.parse('data/links.csv', {
+    download: true,
+    header: true,
+    skipEmptyLines: true,
+    complete: function(results) {
+        allLinks = results.data;
+        renderLinks();
+    }
+});
