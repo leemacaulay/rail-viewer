@@ -39,6 +39,13 @@ h1 {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+
+.link-item.highlight {
+    border: 2px solid #007acc;
+    background-color: #e6f4ff;
+}
+
+
 .link-item img {
     max-width: 100%;
     height: auto;
@@ -64,4 +71,20 @@ h1 {
 .link-item .subtitle {
     margin-top: 5px;
     font-size: 12px;
+}
+
+#randomBtn {
+    display: block;
+    margin: 10px auto 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#randomBtn:hover {
+    background-color: #005fa3;
 }
