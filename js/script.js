@@ -12,13 +12,14 @@ function renderLinks(filter = '') {
         item.innerHTML = `
             <a href="${link.url}" target="_blank">
               <div class="img-wrapper">
-                    <img src="${link.image}" alt="${link.title}">
+                <img src="${link.image}" alt="${link.title}">
               </div>
-                    <div class="title">${link.title}</div>
-                </a>
-            `;
+             <div class="title">${link.title}</div>
+             <div class="subtitle">${link.subtitle}</div>
+            </a>
+        `;
     list.appendChild(item);
-        });
+    });
 }
 
 document.getElementById('search').addEventListener('input', (e) => {
