@@ -52,6 +52,7 @@ h1 {
 }
 
 .link-item {
+    display: grid;
     background: white;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -92,8 +93,39 @@ h1 {
 
 .link-item .subtitle {
     margin-top: 5px;
+    margin-bottom: 1.5em;
     font-size: 12px;
     font-style: italic;
+
+}
+
+.link-item .app-link {
+    align-self: end;
+}
+
+.link-item .app-link a {
+    margin-top: 5px;
+    font-size: 12px;
+    font-style: italic;
+    color: #D24712;
+    text-decoration: none;
+    letter-spacing: -0.05em;
+}
+
+.link-item .app-link:hover {
+    transform:scale(1.4);
+}
+
+.id-small {
+    font-size: 0.6em;
+}
+
+.id-medium {
+    font-size: 0.8em;
+}
+
+.id-large {
+    font-size: 1.4em;
 }
 
 #randomBtn {

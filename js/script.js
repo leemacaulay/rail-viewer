@@ -22,13 +22,20 @@ function renderLinks(filter = '') {
             }
 
         item.innerHTML = `
-            <a href="${link.url}" target="_blank">
+            <a href="https://${link.url}" target="_blank">
               <div class="img-wrapper">
                 <img src="${link.image}" alt="${link.title}">
               </div>
              <div class="title">${link.title}</div>
              <div class="subtitle">${link.subtitle || ''}</div>
             </a>
+            <footer class="app-link">
+                <a href="bbcsounds://${link.url}">
+                    <span class="id-small">&#9608;</span>
+                    <span class="id-normal">&#9608;</span>
+                    <span class="id-large">&#9608;</span> 
+                </a>
+            </footer>
         `;
     list.appendChild(item);
     });
