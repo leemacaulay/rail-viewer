@@ -18,21 +18,22 @@ h1 {
 .search-wrapper {
     position: relative;
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto 20px;
 }
 
 #search {
     width: 100%;
-    padding: 10px 0px 10px 10px;
+    padding: 10px 40px 10px 10px;
     font-size: 16px;
+    box-sizing: border-box;
 }
 
 #clearSearch {
     position: absolute;
-    right: 0px;
+    right: 10px;
     top: 50%;
-    transform: translateY(-55%);
+    transform: translateY(-50%);
     background: transparent;
     border: none;
     font-size: 20px;
@@ -99,11 +100,15 @@ h1 {
 
 }
 
-.link-item .app-link {
+.app-link {
     align-self: end;
 }
 
-.link-item .app-link a {
+.daily-banner .app-link {
+    align-self: auto;
+}
+
+.app-link a, a.app-link {
     margin-top: 5px;
     font-size: 12px;
     font-style: italic;
@@ -112,7 +117,7 @@ h1 {
     letter-spacing: -0.05em;
 }
 
-.link-item .app-link:hover {
+.link-list .app-link:hover {
     transform:scale(1.4);
 }
 
@@ -142,4 +147,92 @@ h1 {
 
 #randomBtn:hover {
     background-color: #005fa3;
+}
+
+.daily-banner {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  align-items: center;
+  justify-content: center; /* Center content horizontally */
+  background-color: #f0f8ff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  gap: 20px;
+  text-align: center; /* Center text on small screens */
+}
+
+.daily-banner .banner-image {
+  flex: 1 1 200px;
+  max-width: 200px;
+}
+
+.daily-banner .banner-content {
+  flex: 2 1 400px;
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 768px) {
+  .daily-banner {
+    flex-direction: column;
+  }
+
+  .daily-banner .banner-image,
+  .daily-banner .banner-content {
+    max-width: 100%;
+    flex: none;
+  }
+}
+
+.daily-banner img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+.daily-banner h2 {
+  margin: 10px 0 0 0;
+}
+
+.daily-banner p {
+  font-style: italic;
+  margin: 5px 0 20px 0;
+}
+
+.daily-banner .date {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.close-banner {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+}
+
+/* Mobile-specific style */
+@media (max-width: 768px) {
+  .close-banner {
+    position: static; /* Remove absolute positioning */
+    display: block;
+    margin: 10px auto 0; /* Center horizontally */
+    font-size: 1.25rem;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px 10px;
+    color: #333;
+  }
+}
+
+#daily-banner {
+  position: relative;
 }
