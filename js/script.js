@@ -128,8 +128,11 @@ function renderRecentPicks(date, allLinks) {
             ${recentPickList.map(pick => `
                 <li>
                     <strong>${pick.date}:</strong>
-                    <a href="${pick.url}"> 
-                    ${pick.title}
+                    <a href="https://${pick.url}"> 
+                    ${pick.title.trim()}</a>
+                    |
+                    <a href="bbcsounds://${pick.url}">
+                    app
                     </a>
                 </li>
             `).join('')}
