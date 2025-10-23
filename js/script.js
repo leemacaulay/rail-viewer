@@ -131,8 +131,10 @@ function renderRecentPicks(date, allLinks) {
                     <a href="https://${pick.url}"> 
                     ${pick.title.trim()}</a>
                     |
-                    <a href="bbcsounds://${pick.url}">
-                    app
+                    <a class="app-link" href="bbcsounds://${pick.url}">
+                        <span class="id-small">&#9608;</span>
+                        <span class="id-normal">&#9608;</span>
+                        <span class="id-large">&#9608;</span> 
                     </a>
                 </li>
             `).join('')}
