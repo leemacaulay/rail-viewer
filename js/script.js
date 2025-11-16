@@ -152,13 +152,8 @@ function renderDailyBanner(link) {
     });
     
     banner.innerHTML = `
-        <button class="close-banner" aria-label="Close banner">&times;</button>
-        <div class="banner-image">
-            <a href="https://${link.url}" target="_blank">
-                <img src="${link.image}" alt="${link.title}" />
-            </a>
-        </div>
         <div class="banner-content">
+            <button class="close-banner" aria-label="Close banner">&times;</button>
             <div class="date">Today's Pick - ${today}</div>
             <a href="https://${link.url}" target="_blank">
             <h2>${link.title}</h2>

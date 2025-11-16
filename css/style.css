@@ -205,6 +205,8 @@ h1 {
   font-size: 0.9em;
   color: #666;
   margin-bottom: 10px;
+  margin-right: 30px;
+  margin-left: 30px;
 }
 
 .close-banner {
@@ -216,21 +218,6 @@ h1 {
   font-size: 1.5rem;
   color: #666;
   cursor: pointer;
-}
-
-/* Mobile-specific style */
-@media (max-width: 768px) {
-  .close-banner {
-    position: static; /* Remove absolute positioning */
-    display: block;
-    margin: 10px auto 0; /* Center horizontally */
-    font-size: 1.25rem;
-    background-color: #eee;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 5px 10px;
-    color: #333;
-  }
 }
 
 #daily-banner {
