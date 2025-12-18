@@ -41,7 +41,6 @@ function renderLinks(filter = '') {
     });
 }
 
-
 function seededRandom(seed) {
     let x = Math.sin(seed) * 10000;
     return x - Math.floor(x);
@@ -180,8 +179,30 @@ function renderDailyBanner(link) {
 
 }
 
-document.getElementById('search').addEventListener('input', (e) => {
-    renderLinks(e.target.value);
+
+const searchInput = document.getElementById('search');
+const clearBtn = document.getElementById('clearSearch');
+
+// Hide clear button initially
+clearBtn.style.display = 'none';
+
+// Show/hide clear button based on input
+searchInput.addEventListener('input', (e) => {
+    const value = e.target.value.trim();
+    if (value !== '') {
+        clearBtn.style.display = 'block';
+    } else {
+        clearBtn.style.display = 'none';
+    }
+       renderLinks(value); // Keep your filtering logic
+});
+
+// Clear search when button clicked
+clearBtn.addEventListener('click', () => {
+    searchInput.value = '';
+    clearBtn.style.display = 'none';
+    renderLinks(); // Reset the list
+    searchInput.focus();
 });
 
 renderLinks();
@@ -215,12 +236,6 @@ document.getElementById('randomBtn').addEventListener('click', () => {
     searchInput.value = randomLink.title;
 
     renderLinks(randomLink.title);
-});
-
-document.getElementById('clearSearch').addEventListener('click', () => {
-  const searchInput = document.getElementById('search');
-  searchInput.value = '';
-  renderLinks(); // Reset the list
 });
 
 document.getElementById('toggle-recent-picks').addEventListener('click', () => {
